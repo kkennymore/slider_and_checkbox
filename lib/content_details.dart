@@ -50,7 +50,7 @@ class ImageDetailPage extends StatelessWidget {
 
   Widget _buildImage(String image) {
     return image.startsWith('http')
-        ? Image.network(image, fit: BoxFit.cover, width: double.infinity)
-        : Image.asset(image, fit: BoxFit.cover, width: double.infinity);
+        ? Image.network(image, fit: BoxFit.contain, width: double.infinity)
+        : Image.asset(image, fit: BoxFit.contain, width: double.infinity);
   }
 }
