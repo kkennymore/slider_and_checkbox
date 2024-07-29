@@ -1,39 +1,92 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+Sure, I can help you with that. Here's a detailed README.md documentation for the source files you currently have opened:
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+## SliderAndCheckbox
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+SliderAndCheckbox is a Flutter package that provides a customizable slider with checkboxes. It allows you to display a list of images with optional checkboxes. You can customize the appearance, animation, and behavior of the slider and checkboxes.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Display a list of images with optional checkboxes
+- Customize the appearance of the slider and checkboxes
+- Customize the animation of the images and checkboxes
+- Customize the behavior of the slider and checkboxes
+- Support for overlay text on the images
+- Support for auto-scrolling of the images
+- Support for swipe gestures to navigate between images
+- Support for tapping on images to view details
+- Support for tapping on checkboxes to toggle their state
 
-## Getting started
+## Getting Started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+To use SliderAndCheckbox in your Flutter project, follow these steps:
+
+1. Add the dependency to your `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  slider_and_checkbox: ^1.0.0
+```
+
+2. Import the package in your Dart file:
+
+```dart
+import 'package:slider_and_checkbox/slider_and_checkbox.dart';
+```
+
+3. Create a list of `ImageModel` objects representing the images you want to display:
+
+```dart
+List<ImageModel> images = [
+  ImageModel(imageUrl: 'image1.jpg', title: 'Image 1', subtitle: 'Subtitle 1'),
+  ImageModel(imageUrl: 'image2.jpg', title: 'Image 2', subtitle: 'Subtitle 2'),
+  ImageModel(imageUrl: 'image3.jpg', title: 'Image 3', subtitle: 'Subtitle 3'),
+];
+```
+
+4. Add the `SliderAndCheckbox` widget to your widget tree:
+
+```dart
+SliderAndCheckbox(
+  images: images,
+)
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Here's an example usage of the `SliderAndCheckbox` widget:
 
 ```dart
-const like = 'sample';
+SliderAndCheckbox(
+  images: images,
+  animationDuration: Duration(seconds: 1),
+  imageBorderRadius: 16,
+  overlayTextColor: Colors.white,
+  overlayTextSize: 16,
+  overlayTextWeight: FontWeight.bold,
+  showOverlayText: true,
+  autoScroll: true,
+  isOverlaySlider: true,
+  imageAnimationType: AnimateEaseType.easeInOut,
+  titleAnimationType: AnimateEaseType.easeInOut,
+  subTitleAnimationType: AnimateEaseType.easeInOut,
+  onCheckboxChanged: (index, checked) {
+    // Handle checkbox change event
+  },
+)
 ```
 
-## Additional information
+In this example, we customize the appearance and behavior of the slider and checkboxes. We set the animation duration to 1 second, the image border radius to 16 pixels, and enable overlay text on the images. We also enable auto-scrolling of the images and use an overlay slider.
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+We also provide a callback function `onCheckboxChanged` to handle the checkbox change event.
+
+Note: This is a basic example. You can customize the appearance, animation, and behavior of the slider and checkboxes further by exploring the available properties and methods of the `SliderAndCheckbox` widget.
+
+## Additional Information
+
+For more information on how to use the package, including customization options and advanced usage, please refer to the package documentation.
+
+## License
+
+SliderAndCheckbox is licensed under the MIT license. See the `LICENSE` file for more information.
+
+I hope this helps! Let me know if you have any further questions.
